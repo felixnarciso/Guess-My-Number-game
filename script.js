@@ -19,13 +19,15 @@ document.querySelector(`.number`).textContent = correctNumber;
 document.querySelector(`.check`).addEventListener(`click`, function(){
 	const guess = Number(document.querySelector(`.guess`).value);
 
-	if (!guess)
+	if (!guess) //when there is no input
 	{
 		document.querySelector(`.message`).textContent = `🚫 No number!`;
-	}else if (guess === correctNumber)
+	}else if (guess === correctNumber) //when player wins
 	{
 		document.querySelector(`.message`).textContent = `Correct Number! :D`;
-	}else if (guess > correctNumber)
+		document.querySelector(`body`).style.backgroundColor = `#60b347`;
+		document.querySelector(`.number`).style.width = `30rem`;
+	}else if (guess > correctNumber) //when guess is too high
 	{
 		if (score > 1)
 		{
@@ -38,7 +40,7 @@ document.querySelector(`.check`).addEventListener(`click`, function(){
 			document.querySelector(`.score`).textContent = 0;
 		}
 		
-	}else if (guess < correctNumber)
+	}else if (guess < correctNumber) //when guess is too low
 	{
 		if (score > 1)
 		{
