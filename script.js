@@ -55,7 +55,7 @@ document.querySelector(`.check`).addEventListener(`click`, function(){
 	}
 });
 
-document.querySelector(`.again`).addEventListener(`click`, function(){
+document.querySelector(`.again`).addEventListener(`click`, function(){ //make it possible to play again
 	document.querySelector(`body`).style.backgroundColor = `#222`;
 		displayMessage(`Start guessing...`);
 	score = 20;
